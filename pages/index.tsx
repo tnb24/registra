@@ -1,22 +1,22 @@
 import type { NextPage } from 'next'
 import { useSession, signIn, signOut } from "next-auth/react"
-import Image from 'next/image'
+import { Container, Button, Text } from '@nextui-org/react';
+
 const Home: NextPage = () => {
   const { data: session } = useSession()
   if (session) {
     return (
-      <>
-        Signed in as {session.user.email} <br />
-        <Image src={session.user?.image} alt="profile picture of you" layout='fill'/>
-        <button onClick={() => signOut()}>Sign out</button>
-      </>
+      <Container>
+        <Text h1>Signed in as {session.user?.name}</Text>
+        <Button onClick={() => signOut()}>Sign out</Button>
+      </Container>
     )
   }
   return (
-    <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
-    </>
+    <Container>
+      <Text h1>Not signed in </Text>
+      <Button onClick={() => signIn()}>Sign in</Button>
+    </Container>
   )
 }
 
