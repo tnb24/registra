@@ -1,16 +1,8 @@
 import type { NextPage } from "next";
 import { useSession, signIn, signOut } from "next-auth/react";
-import {
-  Grid,
-  Container,
-  Button,
-  Text,
-  Card,
-  Avatar,
-} from "@nextui-org/react";
+import { Grid, Container, Button, Text, Card, Avatar } from "@nextui-org/react";
 import RegistraHead from "../components/RegistaHead";
 import AddDataForm from "../components/AddDataForm";
-import DeleteDataForm from "../components/DeleteDataForm";
 const Home: NextPage = () => {
   const { data: session } = useSession();
   if (session) {
@@ -41,9 +33,6 @@ const Home: NextPage = () => {
           </Grid>
           <Grid xs={3}>
             <AddDataForm />
-          </Grid>
-          <Grid xs={3}>
-            <DeleteDataForm />
           </Grid>
         </Grid.Container>
       </>
