@@ -1,29 +1,24 @@
 import type { NextPage } from "next";
 import { useSession, signIn, signOut } from "next-auth/react";
 import {
+  Grid,
   Container,
   Button,
   Text,
   Card,
-  Spacer,
-  Row,
-  Input,
   Avatar,
 } from "@nextui-org/react";
-import axios from "axios";
 import RegistraHead from "../components/RegistaHead";
-import { useRouter } from "next/router";
-
+import AddDataForm from "../components/AddDataForm";
+import DeleteDataForm from "../components/DeleteDataForm";
 const Home: NextPage = () => {
-  const router = useRouter();
   const { data: session } = useSession();
   if (session) {
     return (
       <>
         <RegistraHead />
-        <Container>
-          <Spacer y={1} />
-          <Row justify="flex-start" align="center">
+        <Grid.Container gap={2} justify="center">
+          <Grid xs={3}>
             <Card bordered shadow={false} css={{ mw: "250px" }}>
               <Avatar
                 pointer
@@ -43,41 +38,14 @@ const Home: NextPage = () => {
                 Sign Out
               </Button>
             </Card>
-          </Row>
-          <Spacer y={1} />
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = Object.fromEntries(
-                new FormData(e.target as HTMLFormElement).entries()
-              );
-              const submitData = async () => {
-                axios({
-                  method: "post",
-                  url: "/api/createEntry",
-                  data: form,
-                }).then(async () => router.push("/submitted"));
-              };
-              submitData();
-            }}
-          >
-            <Row justify="center" align="center">
-              <Input id="teamName" name="teamName" label="Team Name" />
-            </Row>
-            <Row justify="center" align="center">
-              <Input id="projectName" name="projectName" label="Project Name" />
-            </Row>
-            <Row justify="center" align="center">
-              <Input id="projectLink" name="projectLink" label="Project Link" />
-            </Row>
-            <Spacer y={0.5} />
-            <Row justify="center" align="center">
-              <Button color="success" flat type="submit">
-                Submit
-              </Button>
-            </Row>
-          </form>
-        </Container>
+          </Grid>
+          <Grid xs={3}>
+            <AddDataForm />
+          </Grid>
+          <Grid xs={3}>
+            <DeleteDataForm />
+          </Grid>
+        </Grid.Container>
       </>
     );
   }
