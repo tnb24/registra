@@ -1,11 +1,13 @@
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
-import { NextUIProvider } from "@nextui-org/react";
-
+import { createTheme, NextUIProvider } from "@nextui-org/react";
+const darkTheme = createTheme({
+  type: "dark",
+});
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <SessionProvider session={session}>
-      <NextUIProvider>
+      <NextUIProvider theme={darkTheme}>
         <Component {...pageProps} />
       </NextUIProvider>
     </SessionProvider>
