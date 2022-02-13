@@ -7,6 +7,5 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const entry = await req.body;
-  console.log(entry.projectName);
   res.json(entry);
 }

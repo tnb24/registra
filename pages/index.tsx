@@ -15,7 +15,7 @@ import RegistraHead from "../components/RegistaHead";
 import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const { data: session } = useSession();
   if (session) {
     return (
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
                   method: "post",
                   url: "/api/createEntry",
                   data: JSON.stringify(form),
-                }).then(async () => router.push("google.com"));
+                }).then(async () => console.log("sent"));
               };
               submitData();
             }}
