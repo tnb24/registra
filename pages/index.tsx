@@ -10,7 +10,6 @@ import {
   Input,
   Avatar,
 } from "@nextui-org/react";
-import { toast } from "react-hot-toast";
 import axios from "axios";
 import RegistraHead from "../components/RegistaHead";
 import { useRouter } from "next/router";
