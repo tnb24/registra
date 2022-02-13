@@ -46,6 +46,13 @@ model User {
   sessions      Session[]
 }
 
+model Project {
+  id String @id @default(cuid())
+  teamName String
+  projectName String @unique
+  projectLink String @unique
+}
+
 model VerificationToken {
   identifier String
   token      String   @unique
