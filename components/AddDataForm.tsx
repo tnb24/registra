@@ -22,13 +22,13 @@ function AddDataForm() {
         }}
       >
         <Row justify="center" align="center">
-          <Input id="teamName" name="teamName" placeholder="Team Name" />
+          <Input id="teamName" name="teamName" label="Team Name" />
         </Row>
         <Row justify="center" align="center">
-          <Input id="projectName" name="projectName" placeholder="Project Name" />
+          <Input id="projectName" name="projectName" label="Project Name" />
         </Row>
         <Row justify="center" align="center">
-          <Input id="projectLink" name="projectLink" placeholder="Project Link" />
+          <Input id="projectLink" name="projectLink" label="Project Link" />
         </Row>
         <Spacer y={0.5} />
         <Row justify="center" align="center">
