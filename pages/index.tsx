@@ -15,7 +15,7 @@ import RegistraHead from "../components/RegistaHead";
 import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
-  // const router = useRouter();
+  const router = useRouter();
   const { data: session } = useSession();
   if (session) {
     return (
@@ -55,8 +55,8 @@ const Home: NextPage = () => {
                 axios({
                   method: "post",
                   url: "/api/createEntry",
-                  data: JSON.stringify(form),
-                }).then(async () => console.log("sent"));
+                  data: form,
+                }).then(async () => router.push('/submitted'));
               };
               submitData();
             }}
@@ -64,11 +64,9 @@ const Home: NextPage = () => {
             <Row justify="center" align="center">
               <Input id="teamName" name="teamName" label="Team Name" />
             </Row>
-            <Spacer y={0.25} />
             <Row justify="center" align="center">
               <Input id="projectName" name="projectName" label="Project Name" />
             </Row>
-            <Spacer y={0.25} />
             <Row justify="center" align="center">
               <Input id="projectLink" name="projectLink" label="Project Link" />
             </Row>

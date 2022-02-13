@@ -46,7 +46,7 @@ model User {
   sessions      Session[]
 }
 
-model Project {
+model ProjectEntry {
   id String @id @default(cuid())
   teamName String
   projectName String @unique
