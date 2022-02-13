@@ -56,7 +56,7 @@ const Home: NextPage = () => {
                   method: "post",
                   url: "/api/createEntry",
                   data: form,
-                }).then(async () => router.push('/submitted'));
+                }).then(async () => router.push("/submitted"));
               };
               submitData();
             }}

@@ -5,13 +5,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const data = await req.body;
-  console.log(data)
+  console.log(data);
   const entry = await prisma.projectEntry.create({
     data: {
-    teamName: data.teamName,
-    projectName: data.projectName,
-    projectLink: data.projectLink
-  }
-  })
-  res.status(200).send(entry)
+      teamName: data.teamName,
+      projectName: data.projectName,
+      projectLink: data.projectLink,
+    },
+  });
+  res.status(200).send(entry);
 }

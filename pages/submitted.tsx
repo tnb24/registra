@@ -1,8 +1,5 @@
 import type { NextPage } from "next";
-import {
-  Container,
-  Text,
-} from "@nextui-org/react";
+import { Container, Text } from "@nextui-org/react";
 import RegistraHead from "../components/RegistaHead";
 
 const Home: NextPage = () => {
