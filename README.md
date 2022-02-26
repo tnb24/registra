@@ -1,1 +1,1 @@
-join [buildergroop](buildergroop.com)
+integrated with [registra](https://github.com/buildergroop/registra)
