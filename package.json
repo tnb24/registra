@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettify": "prettier --write ."
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.1",
