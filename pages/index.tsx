@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { Grid, Container, Button, Text, Card, Avatar } from "@nextui-org/react";
 import RegistraHead from "../components/RegistaHead";
-import AddDataForm from "../components/AddDataForm";
+import SubmitEntry from "../components/SubmitEntry";
 const Home: NextPage = () => {
   const { data: session } = useSession();
   if (session) {
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
             </Card>
           </Grid>
           <Grid xs={3}>
-            <AddDataForm />
+            <SubmitEntry />
           </Grid>
         </Grid.Container>
       </>
@@ -40,10 +40,20 @@ const Home: NextPage = () => {
   }
   return (
     <>
-      <RegistraHead />
+       <RegistraHead />
       <Container>
         <Text h1>Not signed in </Text>
-        <Button onClick={() => signIn()}>Sign in</Button>
+
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a
+          href="/api/auth/signin/discord"
+          onClick={(e) => {
+            e.preventDefault();
+            signIn("discord");
+          }}
+        >
+          <Button rounded>Sign in</Button>
+        </a>
       </Container>
     </>
   );

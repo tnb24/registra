@@ -1,7 +1,7 @@
 import { Button, Card, Spacer, Row, Input } from "@nextui-org/react";
 import axios from "axios";
 import { useRouter } from "next/router";
-function AddDataForm() {
+function SubmitEntry() {
   const router = useRouter();
   return (
     <Card bordered shadow={false} css={{ mw: "250px" }}>
@@ -41,4 +41,4 @@ function AddDataForm() {
   );
 }
 
-export default AddDataForm;
+export default SubmitEntry;
