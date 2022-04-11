@@ -1,1 +1,1 @@
-integrated with [registra](https://github.com/buildergroop/registra)
+a simple registration system which is WIP so expect bugs
