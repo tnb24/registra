@@ -40,7 +40,7 @@ const Home: NextPage = () => {
   }
   return (
     <>
-       <RegistraHead />
+      <RegistraHead />
       <Container>
         <Text h1>Not signed in </Text>
 

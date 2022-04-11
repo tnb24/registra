@@ -6,19 +6,20 @@ function SubmitEntry() {
   return (
     <Card bordered shadow={false} css={{ mw: "250px" }}>
       <form
+        /*took from github.com/alii/website/blob/master/src/pages/talk.tsx */
         onSubmit={async (e) => {
           e.preventDefault();
           const form = Object.fromEntries(
             new FormData(e.target as HTMLFormElement).entries()
           );
-          const submitData = async () => {
+          const createProject = () =>
             axios({
               method: "post",
               url: "/api/createEntry",
               data: form,
-            }).then(async () => router.push("/submitted"));
-          };
-          submitData();
+            })
+              .then(async () => router.push("/submitted"))
+              .catch((error) => console.error(error));
         }}
       >
         <Row justify="center" align="center">
