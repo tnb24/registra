@@ -9,7 +9,6 @@ function SubmitEntry() {
        
         onSubmit={async (e) => {
           e.preventDefault();
-           /* impl of form --> object took from github.com/alii/website/blob/master/src/pages/talk.tsx */
           const form = Object.fromEntries(
             new FormData(e.target as HTMLFormElement).entries()
           );
