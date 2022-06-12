@@ -6,7 +6,6 @@ function SubmitEntry() {
   return (
     <Card bordered shadow={false} css={{ mw: "250px" }}>
       <form
-       
         onSubmit={async (e) => {
           e.preventDefault();
           const form = Object.fromEntries(

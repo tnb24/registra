@@ -1,6 +1,15 @@
 import type { NextPage } from "next";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { Grid, Container, Button, Text, Card, Avatar } from "@nextui-org/react";
+import {
+  Grid,
+  Container,
+  Row,
+  Divider,
+  Button,
+  Text,
+  Card,
+  Avatar,
+} from "@nextui-org/react";
 import RegistraHead from "../components/RegistaHead";
 import SubmitEntry from "../components/SubmitEntry";
 const Home: NextPage = () => {
@@ -42,8 +51,22 @@ const Home: NextPage = () => {
     <>
       <RegistraHead />
       <Container>
-        <Text h1>Not signed in </Text>
-
+        <Text
+          css={{
+            paddingTop: "$2",
+          }}
+          h1
+        >
+          Registra
+        </Text>
+        <Text
+          css={{
+            paddingBottom: "$2",
+          }}
+          as="p"
+        >
+          The open-source solution for hackathons.
+        </Text>
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a
           href="/api/auth/signin/discord"
@@ -52,7 +75,9 @@ const Home: NextPage = () => {
             signIn("discord");
           }}
         >
-          <Button rounded>Sign in</Button>
+          <Button color="gradient" size="sm" rounded>
+            Sign in
+          </Button>
         </a>
       </Container>
     </>
